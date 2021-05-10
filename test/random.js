@@ -17,7 +17,7 @@ tape('parse random objects', function (t) {
   for (var i = 0; i < 100; i++) {
     const o = random()
     const parse = compile.from(o)
-    const parseBuf = compile.from(o, {buffer: true})
+    const parseBuf = compile.from(o, { buffer: true })
 
     const objs = [o]
     while (objs.length < 5) objs.push(randomCopy(o, true))
@@ -25,14 +25,20 @@ tape('parse random objects', function (t) {
 
     objs.forEach(function (o) {
       try {
-        t.ok(same(parse(JSON.stringify(o)), o), 'parsing random object from string')
+        t.ok(
+          same(parse(JSON.stringify(o)), o),
+          'parsing random object from string'
+        )
       } catch (err) {
         t.fail('Could not parse object: ' + JSON.stringify(o))
         t.end()
         return
       }
       try {
-        t.ok(same(parseBuf(Buffer.from(JSON.stringify(o))), o), 'parssing random object from buffer')
+        t.ok(
+          same(parseBuf(Buffer.from(JSON.stringify(o))), o),
+          'parssing random object from buffer'
+        )
       } catch (err) {
         t.fail('Could not parse object from buffer: ' + JSON.stringify(o))
         t.end()
@@ -61,7 +67,7 @@ function randomCopy (o, optional) {
   if (typeof o === 'object') {
     const n = {}
     for (const k of Object.keys(o)) {
-      if (optional && Math.random() < 0.10) {
+      if (optional && Math.random() < 0.1) {
         if (typeof o[k] === 'number') n[k] = 0
         if (typeof o[k] === 'boolean') n[k] = false
         if (typeof o[k] === 'string') n[k] = ''
@@ -81,9 +87,7 @@ function random (r, optional, depth) {
   const len = depth < 10 ? 5 : 3
   switch (r === undefined ? Math.floor(Math.random() * len) : r) {
     case 0:
-      return Math.random() < 0.5
-        ? string(ASCII)
-        : string(SOME_UTF8)
+      return Math.random() < 0.5 ? string(ASCII) : string(SOME_UTF8)
     case 1:
       return Math.random() < 0.33
         ? number()
@@ -96,7 +100,11 @@ function random (r, optional, depth) {
       const obj = {}
       const fields = Math.floor(Math.random() * 10)
       for (var i = 0; i < fields; i++) {
-        obj[string(ALPHA_NUMERIC, ALPHA)] = random(undefined, optional, depth + 1)
+        obj[string(ALPHA_NUMERIC, ALPHA)] = random(
+          undefined,
+          optional,
+          depth + 1
+        )
       }
       return obj
     case 4:
