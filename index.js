@@ -34,6 +34,7 @@ function compile (jsonSchema, opts) {
 
   gen(`function parse (${name}, ptr) {`)
   gen('if (!ptr) ptr = 0')
+  gen(`let parsed_value;`)
   any(gen, null, rawSchema)
   gen('}')
 
