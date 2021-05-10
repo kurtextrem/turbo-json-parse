@@ -92,12 +92,14 @@ function random (r, optional, depth) {
       return Math.random() < 0.33
         ? number()
         : Math.random() < 0.33
-          ? Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
-          : Math.floor(Math.random() * Number.MIN_SAFE_INTEGER)
+        ? Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
+        : Math.floor(Math.random() * Number.MIN_SAFE_INTEGER)
     case 2:
       return Math.random() < 0.5
     case 3:
+      // eslint-disable-next-line
       const obj = {}
+      // eslint-disable-next-line
       const fields = Math.floor(Math.random() * 10)
       for (var i = 0; i < fields; i++) {
         obj[string(ALPHA_NUMERIC, ALPHA)] = random(
@@ -108,6 +110,7 @@ function random (r, optional, depth) {
       }
       return obj
     case 4:
+      // eslint-disable-next-line
       const arr = new Array(Math.floor(Math.random() * 10))
       if (!arr.length) return arr
       arr[0] = random(undefined, optional, depth + 1)

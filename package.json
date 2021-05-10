@@ -7,11 +7,17 @@
     "generate-function": "^2.3.1"
   },
   "devDependencies": {
-    "standard": "^11.0.1",
+    "@commitlint/cli": "^12.1.1",
+    "commitlint-config-airlight": "^1.0.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier-config-airlight": "^1.0.0",
+    "prettier-standard": "^16.4.1",
     "tape": "^4.9.1"
   },
   "scripts": {
-    "test": "standard && tape test/*.js"
+    "lint": "prettier-standard --lint",
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
