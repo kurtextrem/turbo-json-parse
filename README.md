@@ -11,22 +11,22 @@ and is really fast assuming your JSON is type stable.
 
 ## Usage
 
-``` js
-const compile = require('turbo-json-parse')
+```js
+const compile = require('turbo-json-parse');
 
 // Pass in a JSON schema
 
 const parse = compile({
   type: 'object',
   properties: {
-    hello: {type: 'string'},
-    num: {type: 'number'},
-    flag: {type: 'boolean'},
-    flags: {type: 'array', items: {type: 'boolean'}},
+    hello: { type: 'string' },
+    num: { type: 'number' },
+    flag: { type: 'boolean' },
+    flags: { type: 'array', items: { type: 'boolean' } },
     nested: {
       type: 'object',
       properties: {
-        more: {type: 'string'}
+        more: { type: 'string' }
       }
     },
     maybeNull: {
@@ -36,14 +36,14 @@ const parse = compile({
       }
     }
   }
-})
+});
 
 const ex = JSON.stringify({
   hello: 'world'
-})
+});
 
-// will return {hello: 'world'}
-console.log(parse(ex))
+// will print {hello: 'world'}
+console.log(parse(ex));
 ```
 
 ## API
@@ -65,7 +65,7 @@ Options include:
   ordered: false, // set to true if your properties have the same order always
   validate: true, // set to false to disable extra type validation
   validateStrings: true, // set to false to disable extra type validation
-  fullMatch: true, // set to false to do fastest match based on the schema (unsafe!) 
+  fullMatch: true, // set to false to do fastest match based on the schema (unsafe!)
   unescapeStrings: true, // set to false if you don't need to unescape \ chars
   defaults: true // set to false to disable setting of default properties
   prettyPrinted: false // set to true to parse json formatted with JSON.stringify(x, null, 2)
