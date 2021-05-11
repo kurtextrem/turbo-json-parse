@@ -17,7 +17,8 @@
   },
   "scripts": {
     "lint": "prettier-standard --lint",
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

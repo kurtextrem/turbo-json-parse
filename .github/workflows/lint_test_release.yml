@@ -18,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          repository: dalisoft/turbo-json-parse
 
       - name: Use Node.js
         uses: actions/setup-node@v1
