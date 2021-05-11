@@ -13,7 +13,7 @@
     "lint-staged": "^11.0.0",
     "prettier-config-airlight": "^1.0.0",
     "prettier-standard": "^16.4.1",
-    "tape": "^4.9.1"
+    "tape": "^4.13.3"
   },
   "scripts": {
     "lint": "prettier-standard --lint",
