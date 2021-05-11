@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mafintosh/turbo-json-parse.git"
+    "url": "https://github.com/dalisoft/turbo-json-parse.git"
   },
-  "author": "Mathias Buus (@mafintosh)",
+  "author": "Mathias Buus (@mafintosh), dalisoft (@dalisoft)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mafintosh/turbo-json-parse/issues"
+    "url": "https://github.com/dalisoft/turbo-json-parse/issues"
   },
-  "homepage": "https://github.com/mafintosh/turbo-json-parse"
+  "homepage": "https://github.com/dalisoft/turbo-json-parse"
 }
