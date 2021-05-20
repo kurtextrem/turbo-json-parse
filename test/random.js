@@ -123,8 +123,8 @@ function random (r, optional, depth) {
 
 function number () {
   return Math.random() < 0.5
-    ? Math.floor(Math.random() * 1e10) / 1e5
-    : Math.floor(Math.random() * -1e10) / 1e5
+    ? Math.floor(Math.random() * 1e5) / 1e5
+    : Math.floor(Math.random() * -1e5) / 1e5
 }
 
 function string (alpha, first) {

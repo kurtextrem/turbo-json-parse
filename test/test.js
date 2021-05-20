@@ -2,11 +2,11 @@
 
 const t = require('tape')
 
-const tjp = require('../index')
+const tjp = require('..')
 
-t.test('turbo-json-parse', (t) => {
-  t.test('object', (t) => {
-    t.test('string', (t) => {
+t.test('turbo-json-parse', t => {
+  t.test('object', t => {
+    t.test('string', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -23,7 +23,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('string,string', (t) => {
+    t.test('string,string', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -39,7 +39,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('number', (t) => {
+    t.test('number', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -56,7 +56,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('number,number', (t) => {
+    t.test('number,number', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -76,7 +76,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('string,number', (t) => {
+    t.test('string,number', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -92,7 +92,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('number,string', (t) => {
+    t.test('number,string', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -108,7 +108,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('boolean', (t) => {
+    t.test('boolean', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -125,7 +125,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('boolean,boolean', (t) => {
+    t.test('boolean,boolean', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -153,8 +153,8 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('object', (t) => {
-      t.test('string', (t) => {
+    t.test('object', t => {
+      t.test('string', t => {
         const parser = tjp({
           type: 'object',
           properties: {
@@ -173,7 +173,7 @@ t.test('turbo-json-parse', (t) => {
         t.end()
       })
 
-      t.test('number', (t) => {
+      t.test('number', t => {
         const parser = tjp({
           type: 'object',
           properties: {
@@ -196,8 +196,8 @@ t.test('turbo-json-parse', (t) => {
     })
   })
 
-  t.test('array', (t) => {
-    t.test('string', (t) => {
+  t.test('array', t => {
+    t.test('string', t => {
       const parser = tjp({
         type: 'array',
         items: {
@@ -211,7 +211,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('number', (t) => {
+    t.test('number', t => {
       const parser = tjp({
         type: 'array',
         items: {
@@ -226,7 +226,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('boolean', (t) => {
+    t.test('boolean', t => {
       const parser = tjp({
         type: 'array',
         items: {
@@ -241,8 +241,8 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('array', (t) => {
-      t.test('string', (t) => {
+    t.test('array', t => {
+      t.test('string', t => {
         const parser = tjp({
           type: 'array',
           items: {
@@ -281,8 +281,8 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('object', (t) => {
-      t.test('string', (t) => {
+    t.test('object', t => {
+      t.test('string', t => {
         const parser = tjp({
           type: 'array',
           items: {
@@ -303,8 +303,8 @@ t.test('turbo-json-parse', (t) => {
       })
     })
 
-    t.test('object', (t) => {
-      t.test('protected keyword', (t) => {
+    t.test('object', t => {
+      t.test('protected keyword', t => {
         const parser = tjp({
           type: 'object',
           properties: {
@@ -324,8 +324,8 @@ t.test('turbo-json-parse', (t) => {
     t.end()
   })
 
-  t.test('object', (t) => {
-    t.test('numeric property name', (t) => {
+  t.test('object', t => {
+    t.test('numeric property name', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -338,8 +338,8 @@ t.test('turbo-json-parse', (t) => {
     })
   })
 
-  t.test('object', (t) => {
-    t.test('property name with whitespace', (t) => {
+  t.test('object', t => {
+    t.test('property name with whitespace', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -362,7 +362,7 @@ t.test('turbo-json-parse', (t) => {
       t.end()
     })
 
-    t.test('property name with whitespace', (t) => {
+    t.test('property name with whitespace', t => {
       const parser = tjp({
         type: 'object',
         properties: {
@@ -379,7 +379,7 @@ t.test('turbo-json-parse', (t) => {
     })
   })
 
-  t.test('null', (t) => {
+  t.test('null', t => {
     const parser = tjp({
       type: 'object',
       properties: {
@@ -392,7 +392,7 @@ t.test('turbo-json-parse', (t) => {
     t.end()
   })
 
-  t.test('pretty print', (t) => {
+  t.test('pretty print', t => {
     const parser = tjp(
       {
         type: 'object',
@@ -422,7 +422,39 @@ t.test('turbo-json-parse', (t) => {
     t.end()
   })
 
-  t.test('large numbers with decimals', (t) => {
+  t.test('pretty print + buffer', t => {
+    const parser = tjp(
+      {
+        type: 'object',
+        properties: {
+          key1: { type: 'null' },
+          key2: { type: 'string' }
+        }
+      },
+      { prettyPrinted: true, buffer: true }
+    )
+    t.deepEqual(
+      parser(
+        Buffer.from(
+          JSON.stringify(
+            {
+              key1: null,
+              key2: 'test'
+            },
+            null,
+            4
+          )
+        )
+      ),
+      {
+        key1: null,
+        key2: 'test'
+      }
+    )
+    t.end()
+  })
+
+  t.test('large numbers with decimals', t => {
     const parser = tjp({
       type: 'object',
       properties: {

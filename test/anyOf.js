@@ -4,7 +4,7 @@ const t = require('tape')
 
 const tjp = require('../index')
 
-t.test('should parse anyOf string and null', (t) => {
+t.test('should parse anyOf string and null', t => {
   t.plan(2)
 
   const parser = tjp({
@@ -30,7 +30,7 @@ t.test('should parse anyOf string and null', (t) => {
   })
 })
 
-t.test('should parse nested anyOf string and null', (t) => {
+t.test('should parse nested anyOf string and null', t => {
   t.plan(3)
 
   const parser = tjp({
@@ -75,7 +75,7 @@ t.test('should parse nested anyOf string and null', (t) => {
   })
 })
 
-t.test('should parse anyOf string, boolean or null', (t) => {
+t.test('should parse anyOf string, boolean or null', t => {
   t.plan(3)
 
   const parser = tjp({
@@ -107,7 +107,7 @@ t.test('should parse anyOf string, boolean or null', (t) => {
   })
 })
 
-t.test('should parse anyOf array and null', (t) => {
+t.test('should parse anyOf array and null', t => {
   t.plan(4)
 
   const parser = tjp({
@@ -142,7 +142,7 @@ t.test('should parse anyOf array and null', (t) => {
   })
 })
 
-t.test('should parse anyOf boolean and null', (t) => {
+t.test('should parse anyOf boolean and null', t => {
   t.plan(3)
 
   const parser = tjp({
@@ -171,7 +171,7 @@ t.test('should parse anyOf boolean and null', (t) => {
   })
 })
 
-t.test('should parse anyOf number and null', (t) => {
+t.test('should parse anyOf number and null', t => {
   t.plan(12)
 
   const parser = tjp({
@@ -227,7 +227,7 @@ t.test('should parse anyOf number and null', (t) => {
   })
 })
 
-t.test('should parse anyOf string and object', (t) => {
+t.test('should parse anyOf string and object', t => {
   t.plan(2)
 
   const parser = tjp({
@@ -260,7 +260,7 @@ t.test('should parse anyOf string and object', (t) => {
   })
 })
 
-t.test('should parse anyOf string and null', (t) => {
+t.test('should parse anyOf string and null', t => {
   t.plan(2)
 
   const parser = tjp({
