@@ -2,6 +2,7 @@ interface ITurboJsonConfig {
   buffer: boolean;
   required:boolean;
   ordered: boolean;
+  validate: boolean;
   validateStrings: boolean;
   fullMatch: boolean;
   unescapeStrings: boolean;

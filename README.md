@@ -63,6 +63,7 @@ Options include:
   buffer: false, // set to true if you are parsing from buffers instead of strings
   required: false, // set to true if all properties are required
   ordered: false, // set to true if your properties have the same order always
+  validate: true, // set to false to disable extra type validation
   validateStrings: true, // set to false to disable extra type validation
   fullMatch: true, // set to false to do fastest match based on the schema (unsafe!)
   unescapeStrings: true, // set to false if you don't need to unescape \ chars
