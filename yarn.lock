@@ -3434,7 +3434,7 @@ tap-parser@^1.2.2:
   optionalDependencies:
     readable-stream "^2"
 
-tape@4.x.x:
+tape@^4.13.3:
   version "4.13.3"
   resolved "https://registry.yarnpkg.com/tape/-/tape-4.13.3.tgz#51b3d91c83668c7a45b1a594b607dee0a0b46278"
   integrity sha512-0/Y20PwRIUkQcTCSi4AASs+OANZZwqPKaipGCEwp10dQMipVvSZwUUCi01Y/OklIGyHKFhIcjock+DKnBfLAFw==
